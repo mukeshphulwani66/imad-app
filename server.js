@@ -5,8 +5,47 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articles = {
+    'article-one':{
+     heading:"i am heading one",
+     content:
+        "<p>i am first para</p>"
+        
+    },
+    'article-two':{
+        heading:"i am heading two",
+          content:
+       " <p>i am second para</p>"
+    }
+    
+}
+
+function createtamplate(data){
+    var heading=data.heading;
+    var  content=data.content;
+
+var htmltemplate =
+`
+<html>
+<head></head>
+<body>
+<h1>${heading}</h1>
+<div>${content}<div>
+
+</body>
+</html>
+`;
+
+return htmltemplate;
+}
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+app.get('/articleone',function(req,res){
+   res.send(createtamplate(htmltemplate)); 
 });
 
 app.get('/ui/style.css', function (req, res) {
