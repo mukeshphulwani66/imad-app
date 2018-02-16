@@ -44,8 +44,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:articlname',function(req,res){
-   res.send(createtamplate(articles[articlname])); 
+app.get('/:articlename',function(req,res){
+    
+    
+    var articlename = req.params.articlename;
+   res.send(createtamplate(articles[articlename])); 
 });
 
 app.get('/ui/style.css', function (req, res) {
