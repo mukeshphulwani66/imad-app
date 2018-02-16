@@ -45,7 +45,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/articleone',function(req,res){
-   res.send(createtamplate(htmltemplate)); 
+   res.send(createtamplate(articles[0])); 
 });
 
 app.get('/ui/style.css', function (req, res) {
