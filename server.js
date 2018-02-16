@@ -6,13 +6,13 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
-    'article-one':{
+    articleone:{
      heading:"i am heading one",
      content:
         "<p>i am first para</p>"
         
     },
-    'article-two':{
+    articletwo:{
         heading:"i am heading two",
           content:
        " <p>i am second para</p>"
@@ -45,7 +45,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/articleone',function(req,res){
-   res.send(createtamplate(articles.article-one)); 
+   res.send(createtamplate(articles.articleone)); 
 });
 
 app.get('/ui/style.css', function (req, res) {
