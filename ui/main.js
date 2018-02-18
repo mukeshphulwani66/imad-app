@@ -1,7 +1,7 @@
 
 
 var button = document.getElementById("counter");
-
+alert('loaded');
 button.onclick = function(){
 
      var Request = new XMLHttpRequest();
