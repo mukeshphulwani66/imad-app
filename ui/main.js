@@ -35,5 +35,5 @@ fot(var i = 0; i<names.length; i++){
 }
     
     var ul = document.getElementById("namelist");
-    ui.innerHTML =list;
+    ul.innerHTML =list;
 }
