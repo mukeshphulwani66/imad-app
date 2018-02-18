@@ -1,9 +1,8 @@
 
 
 var button = document.getElementById("counter");
-alert('loaded');
 button.onclick = function(){
-
+   //create a request object
      var Request = new XMLHttpRequest();
       
       // capture the responce and store in a variable 
@@ -16,6 +15,8 @@ button.onclick = function(){
             }
         }
     }
-
+ // make request
+ Request.open('GET','http://mukeshphulwani55.imad.hasura-app.io/counter',true);
+  Request.send(null);
   
 }
