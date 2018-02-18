@@ -26,8 +26,15 @@ var nameinput =  document.getElementById("name");
 var name = nameinput.value;
 var submit =  document.getElementById("submit_btn");
 submit.onclick = function(){
-    
-var names = ['name1','name2','name2'];
+   //create a request object
+     var Request = new XMLHttpRequest();
+      
+      // capture the responce and store in a variable 
+    Request.onreadystatechange = function(){
+        if(Request.readyState === XMLHttpRequest.DONE){
+            if(Request.status === 200){
+              var names = Request.responseText;
+              names = JSON.parse(names);
 var list = "";
 for(var i = 0; i<names.length; i++){
     
@@ -36,4 +43,13 @@ for(var i = 0; i<names.length; i++){
     
     var ul = document.getElementById("namelist");
     ul.innerHTML =list;
+            }
+        }
+    }
+    
+    
+Request.open('GET','http://mukeshphulwani55.imad.hasura-app.io/submit-name?name='+name,true);
+  Request.send(null);
+    
+    
 }
