@@ -1,5 +1,5 @@
 
-alert("loaded");
+console.log("loaded");
 var button = document.getElementById("counter");
 
 var counter = 0;
