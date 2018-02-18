@@ -20,6 +20,20 @@
                 has been clicked<span id="count">0</span>times
    </div>
         </div>
+        
+        <script>
+            
+            
+var button = document.getElementById("counter");
+
+var counter = 0;
+button.onclick = function(){
+    
+    counter = counter + 1;
+    var span = document.getElementById("count");
+    span.innerHTML = counter.toString();
+}
+        </script>
         <script type="text/javascript" src="/ui/main.js">
         </script>
     </body>
