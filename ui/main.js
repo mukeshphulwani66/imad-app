@@ -22,8 +22,7 @@ button.onclick = function(){
 }
 
 //submit name
-var nameinput =  document.getElementById("name");
-var name = nameinput.value;
+
 var submit =  document.getElementById("submit_btn");
 submit.onclick = function(){
    //create a request object
@@ -47,7 +46,8 @@ for(var i = 0; i<names.length; i++){
         }
     }
     
-    
+var nameinput =  document.getElementById("name");
+var name = nameinput.value;
 Request.open('GET','http://mukeshphulwani55.imad.hasura-app.io/submit-name?name='+name,true);
   Request.send(null);
     
