@@ -2,10 +2,20 @@
 
 var button = document.getElementById("counter");
 
-var counter = 0;
 button.onclick = function(){
-    
-    counter = counter + 1;
-    var span = document.getElementById("count");
-    span.innerHTML = counter.toString();
+
+     var Request = new XMLHttpRequest();
+      
+      // capture the responce and store in a variable 
+    Request.onreadystatechange = function(){
+        if(Request.readyState === XMLHttpRequest.DONE){
+            if(Request.status === 200){
+               var counter = Request.responseText
+                  var span = document.getElementById("count");
+                 span.innerHTML = counter.toString();
+            }
+        }
+    }
+
+  
 }
