@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-app.use(express.static('ui'));
+app.use('/static',express.static('ui'));
 var articles = {
     articleone:{
      heading:"i am heading one",
